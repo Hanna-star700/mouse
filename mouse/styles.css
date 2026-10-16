@@ -1,0 +1,1284 @@
+/* ==========================================================================
+   Мишеняткові Знання — Styles (Identical to mousealphabet.com)
+   ========================================================================== */
+
+@font-face {
+  font-family: "gotham";
+  font-style: normal;
+  font-weight: 800;
+  src: url("assets/fonts/Gotham-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "gotham";
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/fonts/Gotham-Book.woff2") format("woff2");
+  font-display: swap;
+}
+
+:root {
+  --site-width: 1172px;
+  --gap: 16px;
+  --gap-mobile: 20px;
+  --font-site: "gotham", Arial, Helvetica, sans-serif;
+  --font-size: 24px;
+  --line-height: 1.4;
+  --color-text: #213773;
+  --color-special: #000;
+  --color-error: #ff4545;
+  --color-button: #ff424d;
+  --color-button-text: #fff;
+  --color-bg: #d0f4fb;
+  --color-ok: #2a9d8f;
+  --color-bad: #ff4545;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  background-color: #a8c84a;
+  -webkit-text-size-adjust: none;
+  touch-action: manipulation;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  background-color: #fff;
+  color: var(--color-text);
+  font-family: var(--font-site);
+  font-size: var(--font-size);
+  letter-spacing: -0.006em;
+  line-height: var(--line-height);
+  text-align: center;
+}
+
+.wrapper {
+  background: #fff;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: var(--site-width);
+  padding: 0 var(--gap);
+  text-align: left;
+}
+
+main {
+  min-height: calc(100vh - 306px);
+}
+
+p {
+  margin-bottom: 20px;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--color-button);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  margin-bottom: var(--gap);
+}
+
+h1, h2 {
+  color: var(--color-special);
+  font-size: 40px;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-bottom: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Кнопки */
+.btn {
+  background: var(--color-button);
+  border: none;
+  color: var(--color-button-text);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-site);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.18;
+  overflow: hidden;
+  padding: 12px 38px;
+  position: relative;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  vertical-align: middle;
+  white-space: nowrap;
+  border-radius: 999px;
+  box-shadow: 0 4px 0 #c22e36;
+}
+
+.btn:hover,
+.btn:focus {
+  background: #ff6871;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #c22e36;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: var(--color-text);
+  box-shadow: 0 4px 0 rgba(33, 55, 115, 0.2);
+}
+
+.btn-secondary:hover {
+  background: #f0f4fc;
+}
+
+/* ==========================================================================
+   HERO SECTION (Identical to mousealphabet.com)
+   ========================================================================== */
+
+@keyframes clouds-animation {
+  0% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-2000px);
+  }
+}
+
+.hero {
+  background-image: url("assets/hero/sky.jpg");
+  background-repeat: repeat;
+  background-size: auto 100%;
+  min-height: 653px;
+  padding: 20px;
+  position: relative;
+}
+
+.hero::before,
+.hero::after {
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.hero::before {
+  background-image: url("assets/hero/hills.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: auto;
+  z-index: 0;
+}
+
+.hero::after {
+  animation: clouds-animation 300s linear infinite;
+  background-image: url("assets/hero/clouds.png");
+  background-position: top;
+  background-repeat: repeat-x;
+  background-size: auto;
+  left: -999em;
+  right: -999em;
+  z-index: 0;
+}
+
+.hero .brand {
+  position: relative;
+  z-index: 1;
+}
+
+.hero .logo {
+  margin: 0 auto;
+  max-width: 768px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero .desktop-hidden {
+  display: none;
+}
+
+.hero .social-links {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.hero .social-links a {
+  margin: 0 3px;
+}
+
+.hero .social-links svg {
+  height: auto;
+  max-width: 100%;
+  width: 48px;
+}
+
+.hero .social-links .mail-link {
+  display: none;
+}
+
+.hero .mouse {
+  left: 50%;
+  min-width: 510px;
+  position: absolute;
+  top: 245px;
+  transform: translateX(-70%);
+  z-index: 1;
+}
+
+.hero .mouse-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.hero .mouse-words {
+  color: #fff;
+  left: 230px;
+  position: absolute;
+  right: 30px;
+  top: 32px;
+  text-align: left;
+}
+
+.hero .mouse-words p {
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  font-weight: 800;
+  font-size: clamp(20px, 2.6vw, 28px);
+  margin-bottom: 6px;
+}
+
+.hero .mouse-words .mouse-extra {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-top: 8px;
+  opacity: 0.95;
+}
+
+.hero .hero-actions {
+  position: absolute;
+  bottom: 84px;
+  right: 36px;
+  display: flex;
+  gap: 12px;
+  z-index: 2;
+}
+
+.hero .hero-actions .btn {
+  font-size: 18px;
+  padding: 10px 24px;
+}
+
+.hero .mobile-links {
+  bottom: 22px;
+  display: flex;
+  justify-content: center;
+  min-width: 250px;
+  position: absolute;
+  right: 33px;
+}
+
+.hero .mobile-links a {
+  margin: 0 7px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.hero .mobile-links a:hover {
+  transform: scale(1.05);
+}
+
+.hero .mobile-links img {
+  height: 44px;
+  width: auto;
+}
+
+/* ==========================================================================
+   PATREON SECTION (Identical to mousealphabet.com)
+   ========================================================================== */
+
+.patreon-section {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  font-size: 40px;
+  font-weight: 800;
+  justify-content: center;
+  min-height: 210px;
+  padding: 16px 0 0;
+  position: relative;
+  text-align: center;
+}
+
+.patreon-section::after {
+  background-image: url("assets/bg/bg_ground_top.jpg");
+  background-repeat: repeat;
+  background-size: auto 100%;
+  bottom: 0;
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100vw;
+  z-index: -1;
+}
+
+.patreon-section p {
+  letter-spacing: 0.04em;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+.patreon-section div {
+  margin: 0 0 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.patreon-section div a {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  border-radius: 10px;
+  height: 80px;
+  margin: 5px 12px;
+  padding: 5px;
+  width: 117px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patreon-section div a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.patreon-section .btn-patreon {
+  background: #ff424d;
+}
+
+.patreon-section .btn-buymeacoffee {
+  background: #fd0;
+}
+
+.patreon-section div a img {
+  max-height: 52px;
+  width: auto;
+}
+
+/* ==========================================================================
+   ABOUT SECTION
+   ========================================================================== */
+
+.about {
+  padding: 110px 0;
+  text-align: left;
+}
+
+.about h2 {
+  text-align: center;
+}
+
+.about p {
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.about strong {
+  font-weight: 800;
+  color: #213773;
+}
+
+/* ==========================================================================
+   ROADMAP SECTION (Identical to mousealphabet.com)
+   ========================================================================== */
+
+.roadmap {
+  padding: 110px 0;
+  position: relative;
+  text-align: center;
+}
+
+.roadmap::after {
+  background: var(--color-bg);
+  bottom: 0;
+  content: "";
+  display: block;
+  left: -999em;
+  position: absolute;
+  right: -999em;
+  top: 0;
+  z-index: -1;
+}
+
+.roadmap-list {
+  list-style: none;
+  margin: 0;
+  padding: 20px 0 0;
+}
+
+.roadmap-list li {
+  margin: 0 0 50px;
+  padding: 80px 0 0;
+  position: relative;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.roadmap-list li::before {
+  background: #fff;
+  border: 8px solid var(--color-bg);
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px #fff;
+  content: "";
+  height: 36px;
+  left: 50%;
+  margin-left: -18px;
+  position: absolute;
+  top: 8px;
+  width: 36px;
+}
+
+.roadmap-list img {
+  display: block;
+  height: auto;
+  margin: 0 auto 25px;
+  max-width: 100%;
+}
+
+.roadmap-list p {
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   PARTNERS SECTION
+   ========================================================================== */
+
+.partners {
+  padding: 110px 0;
+}
+
+.partners-list {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+.partners-list li {
+  max-width: 30%;
+  min-width: 200px;
+  padding: 20px 20px 0;
+}
+
+.partners-list img {
+  margin: auto;
+  max-height: 70px;
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
+.partners-list img:hover {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   FOOTER (Identical to mousealphabet.com)
+   ========================================================================== */
+
+.footer {
+  align-items: flex-start;
+  background: #a8c84a;
+  color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 16px;
+  justify-content: space-between;
+  padding: 50px 90px;
+  text-align: left;
+}
+
+.footer > div {
+  width: 33.33%;
+}
+
+.footer .developer {
+  order: -1;
+}
+
+.footer .developer img {
+  max-width: 222px;
+}
+
+.footer .desktop-hidden {
+  display: none;
+}
+
+.footer .copyright {
+  color: #e9eef8;
+  letter-spacing: 0.07em;
+  margin: 15px 0 0;
+  font-size: 14px;
+}
+
+.footer .mobile-links p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.04em;
+  margin: -4px 0 10px;
+}
+
+.footer .mobile-links p a {
+  margin: 0 8px;
+  display: inline-block;
+}
+
+.footer .mobile-links img {
+  height: 48px;
+  width: auto;
+}
+
+.footer .social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding-right: 5px;
+  text-align: right;
+}
+
+.footer .social-link {
+  margin: 0 10px 15px 0;
+}
+
+.footer .social-link svg {
+  width: 44px;
+  height: 44px;
+}
+
+.footer .mail-link {
+  padding-right: 15px;
+  width: 100%;
+  color: #fff;
+}
+
+.footer .mail-link:hover {
+  color: #eef;
+}
+
+/* ==========================================================================
+   MODAL DIALOGS
+   ========================================================================== */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(33, 55, 115, 0.45);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  backdrop-filter: blur(4px);
+}
+
+.modal[hidden] {
+  display: none !important;
+}
+
+.modal-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 460px;
+  width: 100%;
+  position: relative;
+  color: var(--color-text);
+  box-shadow: 0 20px 50px rgba(33, 55, 115, 0.25);
+  text-align: left;
+  animation: pop-in 0.3s ease;
+}
+
+.modal-card h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.modal-card ol {
+  padding-left: 22px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  font-size: 32px;
+  cursor: pointer;
+  color: var(--color-text);
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ==========================================================================
+   INTERACTIVE GAME OVERLAY
+   ========================================================================== */
+
+.game {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  overflow: hidden;
+  color: var(--color-text);
+  background: #fff;
+}
+
+.game[hidden],
+.result[hidden] {
+  display: none !important;
+}
+
+.game-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.game-sky {
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/hero/sky.jpg");
+  background-repeat: repeat;
+  background-size: auto 100%;
+}
+
+.game-clouds {
+  position: absolute;
+  inset: 0;
+  left: -999em;
+  right: -999em;
+  background-image: url("assets/hero/clouds.png");
+  background-repeat: repeat-x;
+  background-position: top;
+  background-size: auto;
+  animation: clouds-animation 200s linear infinite;
+  pointer-events: none;
+}
+
+.game-hills {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12%;
+  height: 55%;
+  background-image: url("assets/hero/hills.png");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: auto 100%;
+  animation: hills-scroll 40s linear infinite;
+  pointer-events: none;
+}
+
+.game-hills.racing {
+  animation-duration: 4s;
+}
+
+@keyframes hills-scroll {
+  from {
+    background-position: 0 bottom;
+  }
+  to {
+    background-position: -1200px bottom;
+  }
+}
+
+.game-ground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 14%;
+  background: linear-gradient(180deg, #7bc45a 0%, #5a9e3e 40%, #4a7a32 100%);
+  box-shadow: inset 0 8px 0 rgba(255, 255, 255, 0.15);
+}
+
+.game-hud {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px 24px;
+}
+
+.btn-hud {
+  background: #fff;
+  color: var(--color-text);
+  padding: 10px 20px;
+  font-size: 16px;
+  box-shadow: 0 3px 0 rgba(33, 55, 115, 0.15);
+}
+
+.scoreboard {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: rgba(255, 255, 255, 0.94);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: 0 3px 0 rgba(33, 55, 115, 0.1);
+}
+
+.chip-ok {
+  color: var(--color-ok);
+}
+
+.topic-wrap select {
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--color-text);
+  border: none;
+  background: rgba(255, 255, 255, 0.94);
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 rgba(33, 55, 115, 0.1);
+}
+
+.game-stage {
+  position: relative;
+  z-index: 4;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 8px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: calc(100dvh - 80px);
+}
+
+.ask-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  position: relative;
+  animation: pop-in 0.35s ease;
+}
+
+.ask-mouse {
+  height: auto;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  object-fit: cover;
+  object-position: left center;
+  clip-path: inset(0 48% 0 0);
+  width: min(280px, 46vw);
+  margin-right: -16%;
+}
+
+.ask-bubble {
+  flex: 1;
+  background: #1a2f6b;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 28px;
+  padding: 18px 24px;
+  margin-top: 18px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(33, 55, 115, 0.25);
+  text-align: left;
+}
+
+.ask-bubble::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 36px;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 16px solid #fff;
+}
+
+.ask-bubble::after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 39px;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-right: 12px solid #1a2f6b;
+}
+
+.topic-badge {
+  display: inline-block;
+  background: #ffe566;
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
+.ask-label {
+  font-size: 15px;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+#question-text {
+  font-size: clamp(17px, 2.5vw, 22px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.track {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  min-height: 140px;
+  padding-bottom: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.caravan-wrap {
+  position: relative;
+  display: inline-block;
+  transform: translateX(0);
+  will-change: transform;
+}
+
+.caravan-wrap.driving {
+  animation: drive-away 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.caravan-wrap.enter {
+  animation: drive-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes drive-away {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(120vw); }
+}
+
+@keyframes drive-in {
+  0% { transform: translateX(-110vw); }
+  100% { transform: translateX(0); }
+}
+
+.caravan-img {
+  display: block;
+  height: clamp(95px, 18vw, 145px);
+  width: auto;
+  max-width: none;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.2));
+}
+
+.wagon-slot {
+  position: absolute;
+  left: 34%;
+  bottom: 18%;
+  width: 14%;
+  height: 42%;
+  min-width: 54px;
+  min-height: 46px;
+  background: rgba(255, 220, 80, 0.35);
+  border: 3px dashed #fff;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 2px;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.wagon-slot.drag-over {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: var(--color-button);
+  transform: scale(1.08);
+}
+
+.wagon-slot.filled {
+  background: rgba(42, 157, 143, 0.85);
+  border-style: solid;
+  border-color: #fff;
+}
+
+.wagon-hint {
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.wagon-slot.filled .wagon-hint {
+  display: none;
+}
+
+.wagon-date {
+  font-size: clamp(11px, 1.8vw, 14px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  position: relative;
+  z-index: 5;
+}
+
+.answer-card {
+  font-family: inherit;
+  font-weight: 800;
+  font-size: clamp(16px, 2.4vw, 21px);
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  background: #fff;
+  border: 4px solid #fff;
+  border-radius: 18px;
+  padding: 14px 10px;
+  min-height: 64px;
+  cursor: pointer;
+  box-shadow: 0 0 0 4px #ff8a3d, 0 6px 0 rgba(33, 55, 115, 0.15);
+  transition: transform 0.15s, box-shadow 0.15s;
+  user-select: none;
+  touch-action: none;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.answer-card:nth-child(1) {
+  box-shadow: 0 0 0 4px #ff6b6b, 0 6px 0 rgba(33, 55, 115, 0.15);
+}
+.answer-card:nth-child(2) {
+  box-shadow: 0 0 0 4px #4ecdc4, 0 6px 0 rgba(33, 55, 115, 0.15);
+}
+.answer-card:nth-child(3) {
+  box-shadow: 0 0 0 4px #ffe566, 0 6px 0 rgba(33, 55, 115, 0.15);
+}
+
+.answer-card:hover {
+  transform: translateY(-4px);
+}
+
+.answer-card.correct {
+  background: #d8f3ef;
+  color: var(--color-ok);
+  box-shadow: 0 0 0 4px var(--color-ok), 0 6px 0 rgba(33, 55, 115, 0.1) !important;
+}
+
+.answer-card.wrong {
+  background: #ffe0e0;
+  color: var(--color-bad);
+  box-shadow: 0 0 0 4px var(--color-bad), 0 6px 0 rgba(33, 55, 115, 0.1) !important;
+}
+
+.feedback {
+  text-align: center;
+  font-weight: 800;
+  font-size: 19px;
+  min-height: 1.4em;
+}
+.feedback.ok { color: #0d6b5c; }
+.feedback.bad { color: #b00020; }
+
+/* ==========================================================================
+   RESULT MODAL
+   ========================================================================== */
+
+.result {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(33, 55, 115, 0.5);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  backdrop-filter: blur(6px);
+}
+
+.result-card {
+  background: #fff;
+  border-radius: 28px;
+  padding: 36px 28px;
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 24px 60px rgba(33, 55, 115, 0.3);
+  animation: pop-in 0.4s ease;
+}
+
+.result-mouse {
+  width: 120px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.result-card h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.result-card p {
+  margin-bottom: 24px;
+  font-size: 18px;
+}
+
+.result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Identical to mousealphabet.com)
+   ========================================================================== */
+
+@media (max-width: 1600px) {
+  .footer {
+    padding: 50px var(--gap);
+  }
+}
+
+@media (max-width: 1024px) {
+  .patreon-section {
+    flex-wrap: wrap;
+    font-size: 20px;
+    min-height: 140px;
+    padding: 10px 0 0;
+  }
+  .patreon-section div {
+    flex: 1 1 100%;
+    margin: 0;
+  }
+  .patreon-section div a {
+    height: 48px;
+    margin: 5px 7px;
+    padding: 13px;
+    width: 70px;
+  }
+  .footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px var(--gap);
+    text-align: center;
+  }
+  .footer > div {
+    margin: 0 0 35px;
+    width: 100%;
+  }
+  .footer .developer {
+    order: 0;
+  }
+  .footer .developer img {
+    margin: 0 auto;
+    max-width: 154px;
+  }
+  .footer .social-links {
+    justify-content: center;
+    padding-right: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    letter-spacing: 0;
+  }
+  .container {
+    padding: 0 var(--gap-mobile);
+  }
+  h1, h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .hero {
+    min-height: 420px;
+    padding: 20px;
+  }
+  .hero::before {
+    background-size: auto 165px;
+  }
+  .hero::after {
+    animation: none;
+    background-position: center 20px;
+    background-size: auto 160px;
+  }
+  .hero .logo {
+    max-width: 340px;
+  }
+  .hero .desktop-hidden {
+    display: block !important;
+  }
+  .hero .mobile-hidden {
+    display: none !important;
+  }
+  .hero .mouse {
+    min-width: 280px;
+    top: 140px;
+    width: 280px;
+    transform: translateX(-50%);
+  }
+  .hero .mouse-words {
+    font-size: 14px;
+    left: 120px;
+    right: 10px;
+    top: 18px;
+  }
+  .hero .mouse-words p {
+    font-size: 16px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .hero .mouse-words .mouse-extra {
+    font-size: 12px;
+  }
+  .hero .hero-actions {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 180px;
+    justify-content: center;
+  }
+  .hero .mobile-links {
+    min-width: 150px;
+    right: 10px;
+  }
+  .hero .mobile-links a {
+    margin: 0 5px;
+  }
+  .hero .mobile-links img {
+    height: 34px;
+  }
+  .about, .roadmap, .partners {
+    padding: 60px 0;
+  }
+  .roadmap-list li {
+    margin: 0 0 40px;
+    padding: 50px 0 0;
+  }
+  .roadmap-list li::before {
+    border-width: 8px;
+    box-shadow: 0 0 0 8px #fff;
+    height: 26px;
+    margin-left: -13px;
+    top: 0;
+    width: 26px;
+  }
+  .answers {
+    grid-template-columns: 1fr;
+  }
+  .ask-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ask-mouse {
+    clip-path: inset(0 45% 0 0);
+    width: 180px;
+    align-self: flex-start;
+    margin-bottom: -20px;
+  }
+  .ask-bubble::before,
+  .ask-bubble::after {
+    display: none;
+  }
+}
